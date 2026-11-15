@@ -1,10 +1,109 @@
-<！DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+<title>静态资源加速 · 秀出自己</title>
+<meta name="description" content="提供CSS/JS/FONTS/IMAGES等静态资源加速。">
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="https://www.xiuyao.me/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.cn" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.cn/css2?family=Archivo:wght@400..900&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@400&display=swap">
+<link rel="stylesheet" href="https://www.xiuyao.me/style.css">
+<style>
+  /* 沿用上一版全站主题，只把 s.xiuyao.me 的内容放进来 */
+  body{display:flex;flex-direction:column;min-height:100vh;}
+  @supports (min-height:100svh){body{min-height:100svh;}}
 
-    <meta charset=utf-8>
-    <title>XY自用库</title>
+  .s-main{flex:1 0 auto;display:flex;align-items:center;padding-block:clamp(48px,7vh,88px);}
+  .s-main > .container{width:100%;}
+  .s-page{width:100%;max-width:700px;margin:0 auto;text-align:center;}
+
+  .s-title{
+    font-size:clamp(2.3rem,6vw,4rem);
+    font-weight:900;line-height:1.05;letter-spacing:-.02em;
+  }
+  .s-desc{margin-top:18px;font-size:.95rem;line-height:2;color:var(--fg-2);}
+  .s-rule{margin-block:clamp(26px,4vh,38px);border:0;border-top:1px solid var(--line-2);}
+  .s-line{margin:0;font-size:.9rem;line-height:2;color:var(--fg-2);}
+  .s-link{
+    color:var(--fg);border-bottom:1px solid var(--line-2);padding-bottom:2px;
+    transition:border-color .3s var(--ease);
+  }
+  .s-link:hover{border-color:var(--fg);}
+  .s-logo{display:block;width:min(344px,100%);margin:0 auto 18px;}
+  .s-logo img{width:100%;height:auto;}
+  .s-thanks{font-size:.85rem;line-height:2;color:var(--fg-2);}
+
+  .s-footer{padding-block:clamp(16px,2.6vw,24px);}
+  .s-footer .foot-row{margin-top:0;}
+  /* 顶栏没有导航时，主题按钮保持靠右 */
+  .theme-btn{margin-left:auto;}
+
+  @media (max-width:520px){
+    .s-title{font-size:clamp(2rem,11vw,3rem);}
+    .s-logo{width:100%;}
+  }
+</style>
 </head>
 <body>
-QQ:843957928
+
+<a class="skip-link" href="#main">跳到主要内容</a>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="https://www.xiuyao.me/">
+      <img class="brand-logo" src="https://www.xiuyao.me/favicon.ico" alt="" width="28" height="28" decoding="async">
+      <span class="brand-name">秀出自己</span>
+    </a>
+
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="切换深浅色">
+      <span class="theme-ico" id="themeIco" aria-hidden="true">◐</span>
+      <span class="theme-txt" id="themeTxt">跟随系统</span>
+    </button>
+  </div>
+</header>
+
+<main id="main" class="s-main">
+  <div class="container">
+    <section class="s-page">
+      <h1 class="s-title">静态资源加速</h1>
+      <p class="s-desc">提供CSS/JS/FONTS/IMAGES等静态资源加速</p>
+
+      <hr class="s-rule">
+
+      <p class="s-line">
+        返回个人主页 &raquo;
+        <a class="s-link" href="https://www.xiuyao.me/">https://www.xiuyao.me/</a>
+      </p>
+
+      <hr class="s-rule">
+
+      <a class="s-logo" href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="了解github">
+        <img src="https://brand.github.com/_next/static/media/logo-03.cc5e5332.png" alt="七牛云存储" width="344" height="88" decoding="async">
+      </a>
+
+      <p class="s-thanks">
+        感谢<a class="s-link" href="https://github.com" target="_blank" rel="noopener noreferrer">github.com</a>提供存储空间和带宽
+      </p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer s-footer">
+  <div class="container">
+    <div class="foot-row">
+      <span class="foot-item">© <span id="year">2026</span> 秀出自己 · 本站已安全运行 <span id="uptime" data-start="2017-02-10T16:52:51">—</span></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.xiuyao.me/script.js"></script>
+
 </body>
 </html>
